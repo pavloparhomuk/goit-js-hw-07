@@ -6,14 +6,14 @@ const profile = {};
 function submitHandler(e) {
   e.preventDefault();
 
-  const email = e.currentTarget.elements.email;
-  const password = e.currentTarget.elements.password;
+  const email = e.currentTarget.elements.email.value.trim();
+  const password = e.currentTarget.elements.password.value.trim();
 
-  if (email.value === '' || password.value === '') {
+  if (email === '' || password === '') {
     alert('Please fill in all the fields!');
   } else {
-    profile.email = email.value;
-    profile.password = password.value;
+    profile.email = email;
+    profile.password = password;
 
     console.log(profile);
   }
